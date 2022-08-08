@@ -1,0 +1,23 @@
+﻿@page
+@model ProgettoAppWeb.Pages.TableInfoLiteModel
+
+@{
+    ViewData["Title"] = "TableInfoLite";
+}
+
+<h1>TableInfoLite</h1>
+
+<div>
+    <h1>@Html.DisplayFor(model => model.table.Id)</h1>
+    
+    <a href="https://localhost:7070" target="_blank" rel="noopener noreferrer">Apri una nuova connessione</a>
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+               <input type="submit" value="Chiudi connessione" class="btn btn-primary" />
+        </div>
+    </form>
+    
+   
+</div>
