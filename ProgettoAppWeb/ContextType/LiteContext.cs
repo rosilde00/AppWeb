@@ -8,6 +8,7 @@ namespace ProgettoAppWeb.Data
         public LiteContext(DbContextOptions<LiteContext> options)
         : base(options)
         { }
+        public DbSet<SQLiteModel>? SQLiteModel { get; set; }
     }
 
     public static class ConnectionStringLite

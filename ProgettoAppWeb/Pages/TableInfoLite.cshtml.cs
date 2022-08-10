@@ -22,6 +22,7 @@ namespace ProgettoAppWeb.Pages
             _logger = logger;
         }
 
+        [BindProperty]
         public TableInfo table { get;set; } = default!;
 
         public async Task<IActionResult> OnGetAsync()
