@@ -26,7 +26,7 @@ namespace ProgettoAppWeb.Pages
             return Page();
         }
 
-        public void OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
             LinkedList<string> tabelle = getTables();
 
@@ -63,12 +63,12 @@ namespace ProgettoAppWeb.Pages
                 bool done = FileWriter.WriteCsv(filePath, s, csv);
                 if (!done)
                 {
-                    Redirect("./Error");
+                    return RedirectToPage("./Error");
                 }
                 csv = string.Empty;
             }
 
-            Redirect("./TableInfoLite");
+            return RedirectToPage("./TableInfoLite");
         }
 
         private LinkedList<string> getTables()

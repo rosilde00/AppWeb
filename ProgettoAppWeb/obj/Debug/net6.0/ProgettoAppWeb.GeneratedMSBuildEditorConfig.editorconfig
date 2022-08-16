@@ -27,8 +27,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/EsportaCsv.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwb3J0YUNzdi5jc2h0bWw=
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/EsportaCsvLite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwb3J0YUNzdkxpdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/EsportaCsvServer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwb3J0YUNzdlNlcnZlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/ImportaCsvLite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1wb3J0YUNzdkxpdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/ImportaCsvServer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1wb3J0YUNzdlNlcnZlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Index.cshtml]

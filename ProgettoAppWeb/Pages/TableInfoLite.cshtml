@@ -11,7 +11,8 @@
     <h1>@Html.DisplayFor(model => model.table.Id)</h1>
     
     <a href="https://localhost:7070" target="_blank" rel="noopener noreferrer">Apri una nuova connessione</a>
-    <a asp-page="EsportaCsv">Esporta in csv</a>
+    <a asp-page="EsportaCsvLite">Esporta in csv</a>
+    <a asp-page="ImportaCsvLite">Importa da csv</a>
 
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
