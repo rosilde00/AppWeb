@@ -5,14 +5,14 @@ using ProgettoAppWeb.Models;
 
 namespace ProgettoAppWeb.Pages
 {
-    public class AddSQLServerModel : PageModel
+    public class AddSQServerModel : PageModel
     {
-        private readonly ILogger<AddSQLServerModel> _logger;
+        private readonly ILogger<IndexModel> _logger;
 
         [BindProperty]
         public SQLServerModel server { get; set; } = default!;
 
-        public AddSQLServerModel(ILogger<AddSQLServerModel> logger)
+        public AddSQServerModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }

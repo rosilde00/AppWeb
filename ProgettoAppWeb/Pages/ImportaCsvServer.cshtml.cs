@@ -60,7 +60,7 @@ namespace ProgettoAppWeb.Pages
                     }
                     v = v.Remove(v.Length - 1);
 
-                    string sql = $"INSERT INTO {tabella} ({colonne}) VALUES({v}); ";
+                    string sql = $"INSERT INTO {tabella} ({colonne}) VALUES({v});";
                     cmd.CommandText = sql;
                     cmd.ExecuteNonQuery();
                 }

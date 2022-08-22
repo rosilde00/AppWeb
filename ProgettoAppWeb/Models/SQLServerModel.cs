@@ -6,16 +6,18 @@ namespace ProgettoAppWeb.Models
     {
         [Required]
         [Display(Name = "Indirizzo del server")]
-        public string serverAddress { get; set; } = string.Empty;
+        public string serverAddress { get; set; }
 
         [Required]
         [Display(Name = "Nome del database")]
-        public string db { get; set; } = string.Empty;
+        public string db { get; set; }
 
+        [Required]
         [Display(Name = "Username")]
-        public string username { get; set; } = string.Empty;
+        public string username { get; set; }
 
+        [Required]
         [Display(Name = "Password")]
-        public string password { get; set; } = string.Empty;
+        public string password { get; set; }
     }
 }

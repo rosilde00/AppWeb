@@ -5,22 +5,104 @@
     ViewData["Title"] = "TableInfoServer";
 }
 
-<h1>TableInfoServer</h1>
-
-<div>
-    <!--<h1>@Html.DisplayFor(model => model.table)</h1>-->
-    <h1>Ciao</h1>
-
-    <a href="https://localhost:7070" target="_blank" rel="noopener noreferrer">Apri una nuova connessione</a>
-    <a asp-page="EsportaCsvServer">Esporta in csv</a>
-    <a asp-page="ImportaCsvServer">Importa da csv</a>
-
-    <form method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-               <input type="submit" value="Chiudi connessione" class="btn btn-primary" />
+<div style="padding-bottom: 10px">
+    <h1>TableInfoServer</h1>
+    <div>
+        <div>
+            <p><a href="https://localhost:7070" target="_blank" rel="noopener noreferrer">Apri una nuova connessione</a></p>
+            <a asp-page="EsportaCsvServer">Esporta in csv</a>
+            <a asp-page="ImportaCsvServer">Importa da csv</a>
+            <p><a asp-page="ExecuteQueryServer" target="_blank" rel="noopener noreferrer">Esegui query</a></p>
         </div>
-    </form>
 
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                   <input type="submit" value="Chiudi connessione" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
+
+<div style="display: grid; grid-template-columns: 35% 35% 35%; grid-row-gap: 15px; column-gap: 15px">
+    @foreach(@Models.TableInfo tab in Model.tables.TablesInfo)
+    {
+        <div style="border: 1px solid black; padding: 8px;">
+            <b style="font-size: x-large">@tab.Name</b>
+            <table border="1" cellpadding="3" id="printTable">
+                <tr>
+                    <th style="border: 1px solid blue;">Column</th>
+                    <th style="border: 1px solid blue;">DataType</th>
+                    <th style="border: 1px solid blue;">IsNullable</th>
+                </tr>
+                @foreach(@Models.TableInfo.Colonna col in tab.Columns)
+                {
+                    <tr>
+                        <th style="border: 1px solid black;">@col.Name</th>
+                        <th style="border: 1px solid black;">@col.dataType</th>
+                        <th style="border: 1px solid black;">@col.isNull</th>
+                    </tr>
+                }
+            </table>
+            
+            @if (tab.PkColumns.Count > 0)
+            {
+                <div style="padding-bottom:20px; padding-top:20px">
+                    <b style="font-size: large">Primary key: </b>
+                    <table border="1" cellpadding="3" id="printTable">
+                        @foreach (string str in tab.PkColumns)
+                        {
+                            <tr>
+                                <th style="border: 1px solid black;">@str</th>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            }
+
+            @if (tab.Indexes.Count > 0)
+            {
+                <div style="padding-bottom:20px">
+                    <b style="font-size: large">Indexes: </b>
+                    <table border="1" cellpadding="3" id="printTable">
+                        <tr>
+                            <th style="border: 1px solid blue;">Name</th>
+                            <th style="border: 1px solid blue;">Column</th>
+                        </tr>
+
+                        @foreach (@Models.TableInfo.Index ind in tab.Indexes)
+                        {
+                            @foreach(string str in ind.Cols)
+                            {
+                                <tr>
+                                    <th style="border: 1px solid black;">@ind.Name</th>
+                                    <th style="border: 1px solid black;">@str</th>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            }
+
+            @if (tab.Foreign_Keys.Count > 0)
+            {
+                <b style="font-size: large">Foreign keys:</b>
+                <table border="1" cellpadding="3" id="printTable">
+                    <tr>
+                        <th style="border: 1px solid blue;">Table</th>
+                        <th style="border: 1px solid blue;">From</th>
+                        <th style="border: 1px solid blue;">To</th>
+                    </tr>
+
+                    @foreach(@Models.TableInfo.Foreign_key fk in tab.Foreign_Keys)
+                    {
+                        <tr>
+                            <th style="border: 1px solid black;">@fk.Table</th>
+                            <th style="border: 1px solid black;">@fk.From</th>
+                            <th style="border: 1px solid black;">@fk.To</th>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+    }

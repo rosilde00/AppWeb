@@ -1,0 +1,51 @@
+﻿@page
+@model ProgettoAppWeb.Pages.ExecuteQueryServerModel
+@{
+    ViewData["Title"] = "ExecuteQuery";
+}
+
+<div>
+    <div style="padding-bottom: 50px">
+        <h1>Query</h1>
+        <form method="post" style="padding-bottom: 10px">
+            <div class="form-group" style="padding-bottom: 10px">
+                <label asp-for="Query" class="control-label"></label>
+                <input asp-for="Query" class="form-control" />
+                <span asp-validation-for="Query" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="padding-bottom: 10px">
+                <input type="submit" value="Esegui" class="btn btn-primary"/>
+            </div>
+        </form>
+        <a asp-page="ExecuteQuery" target="_blank" rel="noopener noreferrer">Apri un'altra scheda</a>
+    </div>
+    <div>
+        <table border="1" cellpadding="3" id="printTable">
+            @if (@Model.FieldsValues.Error==null)
+            {
+                @for (int i = 0; i < @Model.FieldsValues.getRows(); i++)
+                {
+                    Model.FieldsValues.setCurrentRow(i);
+
+                    <tr>
+                        @for (int k = 0; k < @Model.FieldsValues.getColumns(); k++)
+                        {
+                            @if (i == 0)
+                            {
+                                <th style="border: 1px solid blue;">@Model.FieldsValues.selectValue(k)</th>
+                            }
+                            else
+                            {
+                                <th style="border: 1px solid black;">@Model.FieldsValues.selectValue(k)</th>
+                            }
+                        }
+                    </tr>
+                }
+            }
+            else
+            {
+                <th>@Model.FieldsValues.Error</th>
+            }
+        </table>
+    </div>
+</div>

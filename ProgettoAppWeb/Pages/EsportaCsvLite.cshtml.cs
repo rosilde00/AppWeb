@@ -40,7 +40,7 @@ namespace ProgettoAppWeb.Pages
                 cmd.CommandText = $"PRAGMA table_info({s});";
                 DbDataReader res = cmd.ExecuteReader();
                 while (res.Read())
-                {   
+                {
                     csv += res[1].ToString() + ',';
                 }
                 res.Close();

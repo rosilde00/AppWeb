@@ -28,8 +28,8 @@ namespace ProgettoAppWeb.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            string [] path = filePath.Split("/");
-            string tabella = path[path.Length-1].Remove(path[path.Length - 1].Length-4);
+            string[] path = filePath.Split("/");
+            string tabella = path[path.Length - 1].Remove(path[path.Length - 1].Length - 4);
             string[]? csv = FileReader.ReadCsv(filePath);
             if (csv == null)
                 return RedirectToPage("./Error");
@@ -37,14 +37,14 @@ namespace ProgettoAppWeb.Pages
             DbCommand cmd = _context.Database.GetDbConnection().CreateCommand();
             _context.Database.GetDbConnection().Open();
             string colonne = csv[0];
-            
+
             foreach (string line in csv)
             {
                 if (!line.Equals(colonne))
                 {
                     LinkedList<string> listValue = new LinkedList<string>();
                     string[] values = line.Split(',');
-                    
+
                     foreach (string value in values)
                     {
                         if (!Regex.IsMatch(value, @"^\d+$"))
@@ -60,7 +60,7 @@ namespace ProgettoAppWeb.Pages
                     }
                     v = v.Remove(v.Length - 1);
 
-                    string sql = $"INSERT INTO {tabella} ({colonne}) VALUES({v}); ";
+                    string sql = $"INSERT INTO {tabella} ({colonne}) VALUES({v});";
                     cmd.CommandText = sql;
                     cmd.ExecuteNonQuery();
                 }

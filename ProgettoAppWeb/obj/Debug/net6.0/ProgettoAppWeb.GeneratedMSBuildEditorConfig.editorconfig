@@ -8,73 +8,81 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProgettoAppWeb
 build_property.RootNamespace = ProgettoAppWeb
-build_property.ProjectDir = D:\Università\Applicazioni web\ProgettoAppWeb\ProgettoAppWeb\
+build_property.ProjectDir = D:\Programmare\Programmi\C#\AppWeb-main\ProgettoAppWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Università\Applicazioni web\ProgettoAppWeb\ProgettoAppWeb
+build_property.MSBuildProjectDirectory = D:\Programmare\Programmi\C#\AppWeb-main\ProgettoAppWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/AddSQLite.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/AddSQLite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU1FMaXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/AddSQLServer.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/AddSQLServer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU1FMU2VydmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/AddSQLServerLocal.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/AddSQLServerLocal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU1FMU2VydmVyTG9jYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Error.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/EsportaCsvLite.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/EsportaCsvLite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwb3J0YUNzdkxpdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/EsportaCsvServer.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/EsportaCsvServer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwb3J0YUNzdlNlcnZlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/ImportaCsvLite.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/ExecuteQueryLite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhlY3V0ZVF1ZXJ5TGl0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/ExecuteQueryServer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhlY3V0ZVF1ZXJ5U2VydmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/ImportaCsvLite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1wb3J0YUNzdkxpdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/ImportaCsvServer.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/ImportaCsvServer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1wb3J0YUNzdlNlcnZlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Index.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Privacy.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/TableInfoLite.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/TableInfoLite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibGVJbmZvTGl0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/TableInfoServer.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/TableInfoServer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibGVJbmZvU2VydmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/_ViewImports.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/_ViewStart.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Shared/_Layout.cshtml]
+[D:/Programmare/Programmi/C\#/AppWeb-main/ProgettoAppWeb/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-519myrfe0y
