@@ -10,9 +10,11 @@ namespace ProgettoAppWeb.Pages
     public class EsportaCsvServerModel : PageModel
     {
         public readonly ServerContext _context;
-        public EsportaCsvServerModel(ServerContext context)
+        public readonly ILogger<EsportaCsvServerModel> _logger;
+        public EsportaCsvServerModel(ServerContext context, ILogger<EsportaCsvServerModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         [BindProperty]
@@ -26,19 +28,17 @@ namespace ProgettoAppWeb.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             LinkedList<string> tabelle = getTables();
-
             DbCommand cmd = _context.Database.GetDbConnection().CreateCommand();
-            _context.Database.GetDbConnection().Open();
 
             string csv = string.Empty;
 
             foreach (string s in tabelle)
             {
-                cmd.CommandText = $"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = {s}";
+                cmd.CommandText = $"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = \'{s}\'";
                 DbDataReader res = cmd.ExecuteReader();
                 while (res.Read())
                 {
-                    csv += res[1].ToString() + ',';
+                    csv += res[3].ToString() + ',';
                 }
                 res.Close();
                 csv = csv.Substring(0, csv.Length - 1);
@@ -73,7 +73,7 @@ namespace ProgettoAppWeb.Pages
             LinkedList<string> tabelle = new LinkedList<string>();
             DbCommand cmd = _context.Database.GetDbConnection().CreateCommand();
             _context.Database.GetDbConnection().Open();
-            cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_CATALOG = 'dbName'";
+            cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
             DbDataReader res = cmd.ExecuteReader();
             while (res.Read())
             {

@@ -48,7 +48,7 @@ namespace ProgettoAppWeb.Pages
                     foreach (string value in values)
                     {
                         if (!Regex.IsMatch(value, @"^\d+$"))
-                            listValue.AddLast($"\"{value}\"");
+                            listValue.AddLast($"\'{value}\'");
                         else
                             listValue.AddLast(value);
                     }

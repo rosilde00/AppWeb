@@ -5,14 +5,14 @@ using ProgettoAppWeb.Models;
 
 namespace ProgettoAppWeb.Pages
 {
-    public class AddSQLServerModel : PageModel
+    public class AddSQLServerLocalModel : PageModel
     {
-        private readonly ILogger<AddSQLServerModel> _logger;
+        private readonly ILogger<AddSQLServerLocalModel> _logger;
 
         [BindProperty]
         public SQLServerModel server { get; set; } = default!;
 
-        public AddSQLServerModel(ILogger<AddSQLServerModel> logger)
+        public AddSQLServerLocalModel(ILogger<AddSQLServerLocalModel> logger)
         {
             _logger = logger;
         }
@@ -24,9 +24,10 @@ namespace ProgettoAppWeb.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            ConnectionStringServer.setConnectionString(server.serverAddress, server.db, server.username, server.password);
-            _logger.LogInformation("Cambiata connection string in " + ConnectionStringServer.connectionString);
+            ConnectionStringServer.setConnectionStringLocal(server.serverAddress, server.db);
+            _logger.LogInformation("Cambiata connection string in " + ConnectionStringServer.connectionStringLocal);
             return RedirectToPage("./TableInfoServer");
         }
     }
 }
+
