@@ -13,11 +13,19 @@ namespace ProgettoAppWeb.Data
 
     public static class ConnectionStringLite
     {
-        public static string connectionString = "Data Source=";
+        public static LinkedList<string> listConnectionStrings = new LinkedList<string> (new[] {"empty"});
+        public static int actual = 0;
 
-        public static void setConnectionString (string path)
+        public static void addConnectionString (string path)
         {
-            connectionString = $"Data Source={path}";
+            listConnectionStrings.AddLast($"Data Source={path}");
+            actual = listConnectionStrings.Count-1;
+        }
+
+        public static void deleteConnectionString()
+        {
+            listConnectionStrings.RemoveLast();
+            actual = listConnectionStrings.Count - 1;
         }
     }
 }

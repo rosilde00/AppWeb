@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Data.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +11,7 @@ namespace ProgettoAppWeb.Pages
     {
         private readonly LiteContext _context;
         private readonly ILogger<TableInfoLiteModel> _logger;
+
 
         public TableInfoLiteModel(LiteContext context, ILogger<TableInfoLiteModel> logger)
         {
@@ -124,7 +121,7 @@ namespace ProgettoAppWeb.Pages
         public async Task<IActionResult> OnPostAsync ()
         {
             _context.Database.CloseConnection();
-            ConnectionStringLite.setConnectionString("");
+            ConnectionStringLite.deleteConnectionString();
             return RedirectToPage("./Index");
         }
     }

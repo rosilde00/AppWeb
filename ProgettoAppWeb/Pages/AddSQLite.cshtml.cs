@@ -23,8 +23,7 @@ namespace ProgettoAppWeb.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            ConnectionStringLite.setConnectionString(lite.path);
-            _logger.LogInformation("Cambiata connection string in " + ConnectionStringLite.connectionString);
+            ConnectionStringLite.addConnectionString(lite.path);
             return RedirectToPage("./TableInfoLite");
         }
     }

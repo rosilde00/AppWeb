@@ -24,8 +24,7 @@ namespace ProgettoAppWeb.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            ConnectionStringServer.setConnectionStringLocal(server.serverAddress, server.db);
-            _logger.LogInformation("Cambiata connection string in " + ConnectionStringServer.connectionStringLocal);
+            ConnectionStringServer.addConnectionStringLocal(server.serverAddress, server.db);
             return RedirectToPage("./TableInfoServer");
         }
     }

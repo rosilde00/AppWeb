@@ -116,7 +116,7 @@ namespace ProgettoAppWeb.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             _context.Database.CloseConnection();
-            //ConnectionStringServer.setConnectionString("", "", "", "");
+            ConnectionStringServer.deleteConnectionString();
             return RedirectToPage("./Index");
         }
     }

@@ -12,18 +12,26 @@ namespace ProgettoAppWeb.Data
 
     public static class ConnectionStringServer
     {
+        public static LinkedList<string> listConnectionStrings = new LinkedList<string>(new[] { "empty" });
+        public static int actual = 0;
 
-        public static string connectionString = "Server =; Database =; User Id =; Password =;";
-        public static string connectionStringLocal = "Server=; Database=; Trusted_Connection=True;";
-
-        public static void setConnectionString(string server, string db, string username, string password)
+        public static void addConnectionString(string server, string db, string username, string password)
         {
-            connectionString = $"Server = {server}; Database = {db}; User Id = {username}; Password = {password};";
+            listConnectionStrings.AddLast($"Server = {server}; Database = {db}; User Id = {username}; Password = {password};");
+            actual = listConnectionStrings.Count - 1;
         }
 
-        public static void setConnectionStringLocal(string server, string db)
+        public static void addConnectionStringLocal(string server, string db)
         {
-            connectionString = $"Server = {server}; Database = {db}; Trusted_Connection=True;";
+            listConnectionStrings.AddLast($"Server = {server}; Database = {db}; Trusted_Connection=True;");
+            actual = listConnectionStrings.Count - 1;
         }
+
+        public static void deleteConnectionString()
+        {
+            listConnectionStrings.RemoveLast();
+            actual = listConnectionStrings.Count - 1;
+        }
+
     }
 }

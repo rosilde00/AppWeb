@@ -2,25 +2,26 @@
 @model ProgettoAppWeb.Pages.TableInfoLiteModel
 
 @{
-    ViewData["Title"] = "TableInfoLite";
+    ViewData["Title"] = "Informazioni";
 }
 
 <div style="padding-bottom: 10px">
     <h1>TableInfoLite</h1>
-    <div>
-        <div>
-            <p><a href="https://localhost:7070" target="_blank" rel="noopener noreferrer">Apri una nuova connessione</a></p>
-            <a asp-page="EsportaCsvLite">Esporta in csv</a>
-            <a asp-page="ImportaCsvLite">Importa da csv</a>
-            <p><a asp-page="ExecuteQueryLite" target="_blank" rel="noopener noreferrer">Esegui query</a></p>
-        </div>
-
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                   <input type="submit" value="Chiudi connessione" class="btn btn-primary" />
+    <div style="display:flex">
+            <div style="padding-right:10px">
+                <a href="https://localhost:7070" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apri una nuova connessione</a>
+                    <form method="post" style="padding-top:10px">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                               <input type="submit" asp-page-handler="Close" value="Chiudi connessione" class="btn btn-primary" />
+                        </div>
+                    </form>
             </div>
-        </form>
+            <div style="display: flex; flex-direction:column; padding-right:10px; justify-content:space-between">
+                <a asp-page="ImportaCsvLite" class="btn btn-primary">Importa da csv</a>
+                <a asp-page="EsportaCsvLite" class="btn btn-primary">Esporta in csv</a>
+            </div>
+            <p><a asp-page="ExecuteQueryLite" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Esegui query</a></p>
     </div>
 </div>
 
@@ -107,3 +108,6 @@
         </div>
     }
 </div>
+
+
+
