@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Data.Sqlite;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ProgettoAppWeb.Data;
@@ -187,7 +182,7 @@ namespace ProgettoAppWeb.Pages
             }
             else
             {
-                return RedirectToPage("./Error");
+                return RedirectToPage("./Errors/ErrorConnection");
             }
         }
     }

@@ -182,7 +182,7 @@ namespace ProgettoAppWeb.Pages
             }
             else
             {
-                return RedirectToPage("./Error");
+                return RedirectToPage("./Errors/ErrorConnection");
             }
         }
     }

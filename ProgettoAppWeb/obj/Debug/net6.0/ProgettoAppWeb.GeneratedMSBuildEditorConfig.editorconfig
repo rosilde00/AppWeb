@@ -23,12 +23,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU1FMU2VydmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/AddSQLServerLocal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU1FMU2VydmVyTG9jYWwuY3NodG1s
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Errors/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Errors/ErrorConnection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXEVycm9yQ29ubmVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Errors/ErrorFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXEVycm9yRmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/EsportaCsvLite.cshtml]
@@ -57,10 +61,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Università/Applicazioni web/ProgettoAppWeb/ProgettoAppWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]

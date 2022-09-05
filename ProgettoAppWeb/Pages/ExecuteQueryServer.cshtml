@@ -1,12 +1,13 @@
 ﻿@page
 @model ProgettoAppWeb.Pages.ExecuteQueryServerModel
 @{
-    ViewData["Title"] = "ExecuteQuery";
+    ViewData["Title"] = "Esecuzione Query";
 }
+
+<h1>Inserisci la query che vuoi eseguire sul Database</h1>
 
 <div>
     <div style="padding-bottom: 50px">
-        <h1>Query</h1>
         <form method="post" style="padding-bottom: 10px">
             <div class="form-group" style="padding-bottom: 10px">
                 <label asp-for="Query" class="control-label"></label>

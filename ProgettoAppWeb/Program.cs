@@ -19,26 +19,14 @@ var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Errors/Error");
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapRazorPages();
-
-InitContext();
-
 app.Run();
-
-void InitContext()
-{
-    using var scope = app.Services.CreateScope();
-    using var liteContext = scope.ServiceProvider.GetRequiredService<LiteContext>();
-    using var serverContext = scope.ServiceProvider.GetRequiredService<ServerContext>();
-}
 

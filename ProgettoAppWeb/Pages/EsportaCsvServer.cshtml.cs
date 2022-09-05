@@ -4,6 +4,7 @@ using ProgettoAppWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 using ProgettoAppWeb.Tools;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgettoAppWeb.Pages
 {
@@ -18,6 +19,7 @@ namespace ProgettoAppWeb.Pages
         }
 
         [BindProperty]
+        [Display(Name = "Percorso del file")]
         public string filePath { get; set; } = default!;
 
         public IActionResult OnGet()
@@ -60,7 +62,7 @@ namespace ProgettoAppWeb.Pages
                 bool done = FileWriter.WriteCsv(filePath, s, csv);
                 if (!done)
                 {
-                    return RedirectToPage("./Error");
+                    return RedirectToPage("./Errors/ErrorFile");
                 }
                 csv = string.Empty;
             }

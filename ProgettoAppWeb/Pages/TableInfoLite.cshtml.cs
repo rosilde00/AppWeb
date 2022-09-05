@@ -113,8 +113,7 @@ namespace ProgettoAppWeb.Pages
             }
             else
             {
-                //errore (puoi ritornare la pagina errore)
-                return RedirectToPage("./Error");
+                return RedirectToPage("./Errors/ErrorConnection");
             }
         }
 

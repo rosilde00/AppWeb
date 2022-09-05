@@ -5,6 +5,7 @@ using ProgettoAppWeb.Tools;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 using System.Data.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgettoAppWeb.Pages
 {
@@ -19,6 +20,7 @@ namespace ProgettoAppWeb.Pages
         }
 
         [BindProperty]
+        [Display(Name = "Percorso del file")]
         public string filePath { get; set; } = default!;
 
         public IActionResult OnGet()
@@ -32,7 +34,7 @@ namespace ProgettoAppWeb.Pages
             string tabella = path[path.Length - 1].Remove(path[path.Length - 1].Length - 4);
             string[]? csv = FileReader.ReadCsv(filePath);
             if (csv == null)
-                return RedirectToPage("./Error");
+                return RedirectToPage("./Errors/ErrorFile");
 
             DbCommand cmd = _context.Database.GetDbConnection().CreateCommand();
             _context.Database.GetDbConnection().Open();

@@ -22,9 +22,15 @@ namespace ProgettoAppWeb.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostNotLocalAsync()
         {
             ConnectionStringServer.addConnectionString(server.serverAddress, server.db, server.username, server.password);
+            return RedirectToPage("./TableInfoServer");
+        }
+
+        public async Task<IActionResult> OnPostLocalAsync()
+        {
+            ConnectionStringServer.addConnectionStringLocal(server.serverAddress, server.db);
             return RedirectToPage("./TableInfoServer");
         }
     }

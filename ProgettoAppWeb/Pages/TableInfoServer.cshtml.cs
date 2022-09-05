@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Data.Common;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -108,8 +105,7 @@ namespace ProgettoAppWeb.Pages
             }
             else
             {
-                //errore (puoi ritornare la pagina errore)
-                return RedirectToPage("./Error");
+                return RedirectToPage("./Errors/ErrorConnection");
             }
         }
 
