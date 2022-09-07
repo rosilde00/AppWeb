@@ -22,12 +22,20 @@ namespace ProgettoAppWeb.Pages
             return Page();
         }
 
+        /**
+         * Aggiunge la connection string costruita tramite i parametri 
+         * inseriti alla lista delle connection string
+         **/
         public async Task<IActionResult> OnPostNotLocalAsync()
         {
             ConnectionStringServer.addConnectionString(server.serverAddress, server.db, server.username, server.password);
             return RedirectToPage("./TableInfoServer");
         }
 
+        /**
+         * Aggiunge la connection string con trusted connection costruita tramite i parametri 
+         * inseriti alla lista delle connection string
+         **/
         public async Task<IActionResult> OnPostLocalAsync()
         {
             ConnectionStringServer.addConnectionStringLocal(server.serverAddress, server.db);

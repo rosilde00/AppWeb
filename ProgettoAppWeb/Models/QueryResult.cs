@@ -4,7 +4,7 @@
     {
         public LinkedList<Row> Rows { get; set; }
         public Row CurrentRow { get; set; }
-        public string Error { get; set; }
+        public string Status { get; set; }
 
         public QueryResult()
         {

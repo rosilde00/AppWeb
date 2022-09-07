@@ -1,5 +1,8 @@
 ﻿namespace ProgettoAppWeb.Tools
 {
+    /**
+     * Classe che permette di leggere i dati presenti nel file del path specificato
+     * **/
     public class FileReader
     {
         public static string[]? ReadCsv(string path)

@@ -22,31 +22,33 @@
     </div>
     <div>
         <table border="1" cellpadding="3" id="printTable">
-            @if (@Model.FieldsValues.Error==null)
+            @for (int i = 0; i < @Model.FieldsValues.getRows(); i++)
             {
-                @for (int i = 0; i < @Model.FieldsValues.getRows(); i++)
-                {
-                    Model.FieldsValues.setCurrentRow(i);
-
-                    <tr>
-                        @for (int k = 0; k < @Model.FieldsValues.getColumns(); k++)
+                Model.FieldsValues.setCurrentRow(i);
+                <tr>
+                    @for (int k = 0; k < @Model.FieldsValues.getColumns(); k++)
+                    {
+                        @if (i == 0)
                         {
-                            @if (i == 0)
-                            {
-                                <th style="border: 1px solid blue;">@Model.FieldsValues.selectValue(k)</th>
-                            }
-                            else
-                            {
-                                <th style="border: 1px solid black;">@Model.FieldsValues.selectValue(k)</th>
-                            }
+                            <th style="border: 1px solid blue;">@Model.FieldsValues.selectValue(k)</th>
                         }
-                    </tr>
-                }
-            }
-            else
-            {
-                <th>@Model.FieldsValues.Error</th>
+                        else
+                        {
+                            <th style="border: 1px solid black;">@Model.FieldsValues.selectValue(k)</th>
+                        }
+                    }
+                </tr>
             }
         </table>
+        <div style="padding-top:12px">
+            @if (@Model.FieldsValues.Status != null)
+            {
+                <b style="color:black">@Model.FieldsValues.Status</b>
+            }
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

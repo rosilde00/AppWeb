@@ -21,6 +21,10 @@ namespace ProgettoAppWeb.Pages
             return Page();
         }
 
+        /**
+         * Aggiunge la connection string costruita tramite il path
+         * inserito alla lista delle connection string
+         **/
         public async Task<IActionResult> OnPostAsync()
         {
             ConnectionStringLite.addConnectionString(lite.path);

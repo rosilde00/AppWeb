@@ -2,6 +2,9 @@
 
 namespace ProgettoAppWeb.Tools
 {
+    /**
+     * Classe che permette di creare o sovrascrivere un file inserendoci i dati in formato csv
+     * **/
     public static class FileWriter
     {
         public static bool WriteCsv (string path, string tableName, string csv)

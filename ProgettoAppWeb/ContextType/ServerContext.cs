@@ -10,27 +10,36 @@ namespace ProgettoAppWeb.Data
         { }
     }
 
+    /**
+     * Classe che contiene la lista delle connection string SQLServer corrispondenti alle connessioni
+     * aperte fino ad ora
+     * **/
     public static class ConnectionStringServer
     {
         public static LinkedList<string> listConnectionStrings = new LinkedList<string>(new[] { "empty" });
-        public static int actual = 0;
 
+        /**
+         * Aggiunge una connection string con nome utente e password
+         * **/
         public static void addConnectionString(string server, string db, string username, string password)
         {
             listConnectionStrings.AddLast($"Server = {server}; Database = {db}; User Id = {username}; Password = {password};");
-            actual = listConnectionStrings.Count - 1;
         }
 
+        /**
+         * Aggiunge una connection string con trusted connection
+         * **/
         public static void addConnectionStringLocal(string server, string db)
         {
             listConnectionStrings.AddLast($"Server = {server}; Database = {db}; Trusted_Connection=True;");
-            actual = listConnectionStrings.Count - 1;
         }
 
+        /**
+         * Rimuove l'ultima connection string
+         * **/
         public static void deleteConnectionString()
         {
             listConnectionStrings.RemoveLast();
-            actual = listConnectionStrings.Count - 1;
         }
 
     }

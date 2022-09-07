@@ -7,12 +7,12 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<LiteContext>(options =>
 {
-    options.UseSqlite(ConnectionStringLite.listConnectionStrings.ElementAt(ConnectionStringLite.actual));
+    options.UseSqlite(ConnectionStringLite.listConnectionStrings.Last());
 });
 
 builder.Services.AddDbContext<ServerContext>(options =>
 {
-    options.UseSqlServer(ConnectionStringServer.listConnectionStrings.ElementAt(ConnectionStringServer.actual));
+    options.UseSqlServer(ConnectionStringServer.listConnectionStrings.Last());
 });
 
 var app = builder.Build();

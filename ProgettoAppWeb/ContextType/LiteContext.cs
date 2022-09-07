@@ -11,21 +11,25 @@ namespace ProgettoAppWeb.Data
         public DbSet<SQLiteModel>? SQLiteModel { get; set; }
     }
 
+    /**
+     * Classe che contiene la lista delle connection string SQLite corrispondenti alle connessioni
+     * aperte fino ad ora
+     * **/
     public static class ConnectionStringLite
     {
         public static LinkedList<string> listConnectionStrings = new LinkedList<string> (new[] {"empty"});
-        public static int actual = 0;
 
         public static void addConnectionString (string path)
         {
             listConnectionStrings.AddLast($"Data Source={path}");
-            actual = listConnectionStrings.Count-1;
         }
 
+        /**
+         * Rimuove l'ultima connection string
+         * **/
         public static void deleteConnectionString()
         {
             listConnectionStrings.RemoveLast();
-            actual = listConnectionStrings.Count - 1;
         }
     }
 }
