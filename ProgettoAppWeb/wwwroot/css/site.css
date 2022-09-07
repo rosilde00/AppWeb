@@ -23,5 +23,16 @@ body {
 }
 
 .btn.btn-primary {
-    background-color:aquamarine;
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+}
+
+.btn.btn-primary.close {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.btn.btn-primary.indietro {
+    background-color: mediumslateblue;
+    border-color: mediumslateblue;
 }
