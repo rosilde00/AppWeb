@@ -108,7 +108,6 @@ namespace ProgettoAppWeb.Pages
 
                 reader.Close();
                 _context.Database.GetDbConnection().Close();
-                tables.TablesInfo.RemoveFirst();
                 return Page();
             }
             else

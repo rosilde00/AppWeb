@@ -67,7 +67,7 @@ namespace ProgettoAppWeb.Pages
                 csv = string.Empty;
             }
 
-            return RedirectToPage("./TableInfoLite");
+            return RedirectToPage("./TableInfoServer");
         }
 
         private LinkedList<string> getTables()
