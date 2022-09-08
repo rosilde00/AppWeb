@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Università\\Applicazioni web\\ProgettoAppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj": {}
+    "D:\\Programmare\\Programmi\\C#\\AppWeb-main\\AppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj": {}
   },
   "projects": {
-    "D:\\Università\\Applicazioni web\\ProgettoAppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj": {
+    "D:\\Programmare\\Programmi\\C#\\AppWeb-main\\AppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Università\\Applicazioni web\\ProgettoAppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj",
+        "projectUniqueName": "D:\\Programmare\\Programmi\\C#\\AppWeb-main\\AppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj",
         "projectName": "ProgettoAppWeb",
-        "projectPath": "D:\\Università\\Applicazioni web\\ProgettoAppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj",
-        "packagesPath": "C:\\Users\\rosil\\.nuget\\packages\\",
-        "outputPath": "D:\\Università\\Applicazioni web\\ProgettoAppWeb\\ProgettoAppWeb\\obj\\",
+        "projectPath": "D:\\Programmare\\Programmi\\C#\\AppWeb-main\\AppWeb\\ProgettoAppWeb\\ProgettoAppWeb.csproj",
+        "packagesPath": "C:\\Users\\Roberto\\.nuget\\packages\\",
+        "outputPath": "D:\\Programmare\\Programmi\\C#\\AppWeb-main\\AppWeb\\ProgettoAppWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rosil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Roberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +75,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -87,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

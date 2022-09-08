@@ -1,5 +1,10 @@
 ﻿namespace ProgettoAppWeb.Models
 {
+    /**
+     * Classe che rappresenta il risultato di una query,
+     * salva lo status della query che indica le righe modificate 
+     * o eventuali errori avvenuti nella query
+     **/
     public class QueryResult
     {
         public LinkedList<Row> Rows { get; set; }
@@ -58,6 +63,11 @@
             Rows.Clear();
         }
 
+        /**
+         * Classe che rappresenta le righe della tabella
+         * utilizzata per mostrare risultati di modifiche applicate ad essa
+         * e come output di query di SELECT
+         **/
         public class Row
         {
             public int Id { get; set; }

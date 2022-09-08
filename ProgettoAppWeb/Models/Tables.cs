@@ -1,5 +1,8 @@
 ﻿namespace ProgettoAppWeb.Models
 {
+    /**
+     *  Classe che contiene tutte le tabelle prese dal DB 
+     **/
     public class Tables
     {
         public LinkedList<TableInfo> TablesInfo { get; set; }

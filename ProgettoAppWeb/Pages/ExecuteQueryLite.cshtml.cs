@@ -29,6 +29,10 @@ namespace ProgettoAppWeb.Pages
             return Page();
         }
 
+        /**
+         * Analizza la query inserita tramite interfaccia 
+         * ed esegue le operazioni richieste
+         **/
         public async Task<IActionResult> OnPostAsync()
         {
             if (_context.Database.CanConnect())
@@ -38,16 +42,20 @@ namespace ProgettoAppWeb.Pages
                 DbCommand cmd = _context.Database.GetDbConnection().CreateCommand();
                 _context.Database.GetDbConnection().Open();
                 FieldsValues.Status = null;
+
+                //in base alla query esegue diverse operazioni
                 switch (querySplit[0])
                 {
                     case "SELECT":
                         cmd.CommandText = Query;
                         try
                         {
+                            //esegue la query
                             DbDataReader reader = cmd.ExecuteReader();
 
                             if (reader.HasRows)
                             {
+                                //ottiene le righe
                                 for (int k = 1; reader.Read(); k++)
                                 {
                                     LinkedList<string> list = new LinkedList<string>();
@@ -59,6 +67,7 @@ namespace ProgettoAppWeb.Pages
                                     FieldsValues.addRow(k, list);
                                 }
 
+                                //prende i nomi delle colonne per la stampa a schermo
                                 reader.Close();
                                 cmd.CommandText = $"PRAGMA table_info({querySplit[3]})";
                                 reader=cmd.ExecuteReader();
@@ -73,11 +82,15 @@ namespace ProgettoAppWeb.Pages
                             }
                             else
                             {
+                                //imposta lo status della query che viene stampato a schermo
+                                //nel caso non siano state trovate corrispondenze
                                 FieldsValues.Status = "NO VALUES FOUND";
                             }
                         }
                         catch (SqliteException e)
                         {
+                            //imposta lo status della query che viene stampato a schermo
+                            //nel caso di errore 
                             FieldsValues.Status = e.Message;
                         }
                         break;
@@ -86,9 +99,12 @@ namespace ProgettoAppWeb.Pages
                         cmd.CommandText = Query;
                         try
                         {
+                            //esegue la query
                             DbDataReader reader = cmd.ExecuteReader();
                             if(reader!= null)
                             {
+                                //ottiene il numero di righe che sono state interpellate nella query
+                                //per stamparlo a schermo
                                 reader.Close();
                                 cmd.CommandText = "SELECT changes()";
                                 reader=cmd.ExecuteReader();
@@ -99,6 +115,7 @@ namespace ProgettoAppWeb.Pages
                                     reader.Close();
                                 }
 
+                                //ottiene la tabella per stamparla a schermo e mostrare eventuali modifiche
                                 cmd.CommandText = "SELECT * FROM " + querySplit[2].Split("(")[0];
                                 reader = cmd.ExecuteReader();
 
@@ -113,6 +130,7 @@ namespace ProgettoAppWeb.Pages
                                     FieldsValues.addRow(k, list);
                                 }
 
+                                //prende i nomi delle colonne per la stampa a schermo
                                 reader.Close();
                                 cmd.CommandText = $"PRAGMA table_info({querySplit[2].Split("(")[0]})";
                                 reader = cmd.ExecuteReader();
@@ -128,6 +146,8 @@ namespace ProgettoAppWeb.Pages
                         }
                         catch (SqliteException e)
                         {
+                            //imposta lo status della query che viene stampato a schermo
+                            //nel caso di errore 
                             FieldsValues.Status = e.Message;
                         }
                         break;
@@ -136,9 +156,12 @@ namespace ProgettoAppWeb.Pages
                         cmd.CommandText = Query;
                         try
                         {
+                            //esegue la query
                             DbDataReader reader = cmd.ExecuteReader();
                             if (reader != null)
                             {
+                                //ottiene il numero di righe che sono state interpellate nella query
+                                //per stamparlo a schermo
                                 reader.Close();
                                 cmd.CommandText = "SELECT changes()";
                                 reader = cmd.ExecuteReader();
@@ -149,6 +172,7 @@ namespace ProgettoAppWeb.Pages
                                     reader.Close();
                                 }
 
+                                //ottiene la tabella per stamparla a schermo e mostrare eventuali modifiche
                                 cmd.CommandText = "SELECT * FROM " + querySplit[1];
                                 reader = cmd.ExecuteReader();
 
@@ -163,6 +187,7 @@ namespace ProgettoAppWeb.Pages
                                     FieldsValues.addRow(k, list);
                                 }
 
+                                //prende i nomi delle colonne per la stampa a schermo
                                 reader.Close();
                                 cmd.CommandText = $"PRAGMA table_info({querySplit[1]})";
                                 reader = cmd.ExecuteReader();
@@ -178,6 +203,8 @@ namespace ProgettoAppWeb.Pages
                         }
                         catch (SqliteException e)
                         {
+                            //imposta lo status della query che viene stampato a schermo
+                            //nel caso di errore 
                             FieldsValues.Status = e.Message;
                         }
                         break;
@@ -186,9 +213,12 @@ namespace ProgettoAppWeb.Pages
                         cmd.CommandText = Query;
                         try
                         {
+                            //esegue la query
                             DbDataReader reader = cmd.ExecuteReader();
                             if (reader != null)
                             {
+                                //ottiene il numero di righe che sono state interpellate nella query
+                                //per stamparlo a schermo
                                 reader.Close();
                                 cmd.CommandText = "SELECT changes()";
                                 reader = cmd.ExecuteReader();
@@ -199,6 +229,7 @@ namespace ProgettoAppWeb.Pages
                                     reader.Close();
                                 }
 
+                                //ottiene la tabella per stamparla a schermo e mostrare eventuali modifiche
                                 cmd.CommandText = "SELECT * FROM " + querySplit[2];
                                 reader = cmd.ExecuteReader();
 
@@ -213,6 +244,7 @@ namespace ProgettoAppWeb.Pages
                                     FieldsValues.addRow(k, list);
                                 }
 
+                                //prende i nomi delle colonne per la stampa a schermo
                                 reader.Close();
                                 cmd.CommandText = $"PRAGMA table_info({querySplit[2].Split("(")[0]})";
                                 reader = cmd.ExecuteReader();
@@ -228,11 +260,15 @@ namespace ProgettoAppWeb.Pages
                         }
                         catch (SqliteException e)
                         {
+                            //imposta lo status della query che viene stampato a schermo
+                            //nel caso di errore 
                             FieldsValues.Status = e.Message;
                         }
                         break;
 
                     default:
+                        //imposta lo statut della query che viene stampato a schermo
+                        //nel caso in cui la query non venga riconosciuta come valida
                         FieldsValues.Status = $"ERROR: unknown statement: '{querySplit[0]}'";
                         break;
                 }

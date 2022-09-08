@@ -1,5 +1,4 @@
-﻿
-using System.Data.Common;
+﻿using System.Data.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +19,17 @@ namespace ProgettoAppWeb.Pages
         [BindProperty]
         public Tables tables { get;set; } = default!;
 
+        /**
+         * Ottiene tutte le tabelle e informazioni dal DB
+         * che devono essere stampate a schermo
+         **/ 
         public async Task<IActionResult> OnGetAsync()
         {
             if (_context.Database.CanConnect())
             {
                 LinkedList<string> names = new LinkedList<string>();
 
+                //raccoglie i nomi di tutte le tabelle nel DB
                 DbCommand cmd = _context.Database.GetDbConnection().CreateCommand();
                 _context.Database.GetDbConnection().Open();
                 cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
@@ -40,8 +44,10 @@ namespace ProgettoAppWeb.Pages
 
                 reader.Close();
 
+                //per ogni tabella esegue le operazioni
                 foreach (string name in names)
                 {
+                    //ottiene le informazioni sulle colonne
                     cmd.CommandText = $"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= '{name}'";
                     reader = cmd.ExecuteReader();
 
@@ -61,6 +67,7 @@ namespace ProgettoAppWeb.Pages
 
                     reader.Close();
 
+                    //ottiene le chiavi primarie 
                     cmd.CommandText = $"EXEC sp_pkeys '{name}'";
                     reader = cmd.ExecuteReader();
                     if (reader != null)
@@ -74,6 +81,7 @@ namespace ProgettoAppWeb.Pages
 
                     reader.Close();
 
+                    //ottiene le chiavi esterne
                     cmd.CommandText = $"EXEC sp_fkeys '{name}'";
                     reader=cmd.ExecuteReader();
                     if(reader != null)
@@ -86,6 +94,7 @@ namespace ProgettoAppWeb.Pages
 
                     reader.Close();
 
+                    //ottiene gli indici
                     cmd.CommandText = $"EXEC sp_helpindex '{name}'";
                     reader = cmd.ExecuteReader();
                     if (reader != null)
