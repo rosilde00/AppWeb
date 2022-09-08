@@ -53,7 +53,9 @@ namespace ProgettoAppWeb.Pages
 
                     foreach (string value in values)
                     {
-                        if (!Regex.IsMatch(value, @"^\d+$")) //se il dato non è un numero, nella query va indicato con le virgolette
+                        if (value == "") //se il campo è vuoto, il dato in db sarà null
+                            listValue.AddLast("NULL");
+                        else if (!Regex.IsMatch(value, @"^\d+$")) //se il dato non è un numero, nella query va indicato con le virgolette
                             listValue.AddLast($"\"{value}\"");
                         else
                             listValue.AddLast(value);
